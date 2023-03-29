@@ -7,10 +7,14 @@ const ErrorPage = () => {
   console.error(error);
 
   return (
-    <Box sx={{ display: 'grid', placeItems: 'center', pt: 2 }}>
-      <Typography variant='h3'>Oops!</Typography>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <Button href='/'>Take me home</Button>
+    <Box sx={{ display: 'grid', placeItems: 'center', pt: 2 }} gap={1}>
+      <Typography variant='h4' component='p'>
+        Oops!
+      </Typography>
+      <Typography>Sorry, an unexpected error has occurred.</Typography>
+      <Button variant='contained' href='/'>
+        Take me home
+      </Button>
     </Box>
   );
 };

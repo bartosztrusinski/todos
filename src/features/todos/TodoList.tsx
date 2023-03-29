@@ -27,7 +27,7 @@ const TodoList = () => {
       <Typography variant='h6' component='p' fontWeight={400}>
         You have no ToDos 😬
       </Typography>
-      <Button variant='contained' color='primary' href='/todos/new'>
+      <Button variant='contained' href='/todos/new'>
         Add a ToDo
       </Button>
     </Box>
