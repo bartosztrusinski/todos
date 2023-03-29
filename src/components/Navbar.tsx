@@ -10,7 +10,6 @@ import {
   AppBar,
   Box,
   Button,
-  CssBaseline,
   Divider,
   Drawer,
   IconButton,
@@ -27,17 +26,17 @@ const drawerWidth = 240;
 const pages = [
   {
     name: 'Home',
-    href: '/',
+    url: '/',
     icon: <HomeRoundedIcon />,
   },
   {
     name: 'My Todos',
-    href: '/todos',
+    url: '/todos',
     icon: <StickyNote2RoundedIcon />,
   },
   {
     name: 'Add Todo',
-    href: '/todos/new',
+    url: '/todos/new',
     icon: <NoteAddRoundedIcon />,
   },
 ];
@@ -70,8 +69,8 @@ const NavBar = () => {
         {pages.map((page) => (
           <ListItem key={page.name} disablePadding>
             <ListItemButton
-              href={page.href}
-              selected={Boolean(useMatch(page.href))}>
+              href={page.url}
+              selected={Boolean(useMatch(page.url))}>
               <ListItemIcon>{page.icon}</ListItemIcon>
               <ListItemText primary={page.name} />
             </ListItemButton>
@@ -123,12 +122,12 @@ const NavBar = () => {
               <Button
                 size='large'
                 startIcon={page.icon}
-                href={page.href}
+                href={page.url}
                 key={page.name}
                 sx={{
                   mr: 1,
                   color: 'background.default',
-                  backgroundColor: useMatch(page.href)
+                  backgroundColor: useMatch(page.url)
                     ? 'primary.dark'
                     : 'primary.main',
                 }}>
