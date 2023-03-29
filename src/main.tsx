@@ -1,26 +1,35 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
 import store from './store';
 import { StrictMode } from 'react';
 import { Provider } from 'react-redux';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import TodoList from './features/todos/TodoList/TodoList';
-import TodoForm from './features/todos/TodoForm/TodoForm';
 import ErrorPage from './components/ErrorPage';
+import TodosPage from './features/todos/TodosPage';
+import Root from './components/Root';
+import AddTodoPage from './features/todos/AddTodoPage';
+import HomePage from './components/HomePage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <App />,
+    element: <Root />,
     errorElement: <ErrorPage />,
     children: [
       {
+        path: '/',
+        element: <HomePage />,
+      },
+      {
         path: 'todos',
-        element: <TodoList />,
+        element: <TodosPage />,
       },
       {
         path: 'todos/new',
-        element: <TodoForm />,
+        element: <AddTodoPage />,
+      },
+      {
+        path: '*',
+        element: <ErrorPage />,
       },
     ],
   },
