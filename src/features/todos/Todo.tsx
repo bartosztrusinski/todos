@@ -1,6 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { addTodo, deleteTodo, toggleTodo } from '../todosSlice';
-import style from './Todo.module.css';
+import { addTodo, deleteTodo, toggleTodo } from './todosSlice';
 
 interface Todo {
   id: string;
@@ -12,15 +11,10 @@ type TodoProps = Todo;
 
 const Todo = ({ id, task, completed }: TodoProps) => {
   const dispatch = useDispatch();
-  const classes = [style.todo, completed && style.completed]
-    .filter(Boolean)
-    .join(' ');
 
   return (
     <li>
-      <b className={classes} onClick={() => dispatch(toggleTodo(id))}>
-        {task}
-      </b>
+      <b onClick={() => dispatch(toggleTodo(id))}>{task}</b>
       <button onClick={() => dispatch(deleteTodo(id))}>X</button>
     </li>
   );

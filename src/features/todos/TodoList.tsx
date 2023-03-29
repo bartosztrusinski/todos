@@ -1,6 +1,6 @@
-import Todo from '../Todo/Todo';
+import Todo from './Todo';
 import { useSelector } from 'react-redux';
-import { selectTodos } from '../todosSlice';
+import { selectTodos } from './todosSlice';
 
 const TodoList = () => {
   const todos = useSelector(selectTodos);
